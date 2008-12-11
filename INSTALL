@@ -1,0 +1,46 @@
+## Development
+ 1) cd /home/nbstrite/
+ 2) mkdir public_html
+ 3) mkdir public_html/apps
+ 4) chmod a+rx -R public_html
+ 5) mkdir webapps
+ 6) svn co http://collab.pbs.org/svn/web/notabs/trunk/notabs webapps/notabs 
+ 7) ln -s webapps/notabs/notabs public_html/apps/notabs
+ 8) cp public_html/apps/notabs/.htaccess.tmpl public_html/apps/notabs/.htaccess
+ 9) emacs public_html/apps/notabs/.htaccess
+
+## Production
+ 1) cd /shark/apps/pbs/webapps/
+ 2) svn co http://collab.pbs.org/svn/web/notabs/trunk/notabs notabs
+ 3) emacs /shark/apps/pbs/apache1/conf/appserver-apache2/http.conf
+   a) Insert the following configuration
+
+        <Location /notabs>
+            Options +Includes +ExecCGI
+            Header set X-PBS-Server "Handled by %{HOSTNAME}e (duration %D)"
+            SetHandler mod_python
+            PythonPath "['/shark/apps/pbs/django/django/0.95', '/shark/apps/pbs/webapps'] + sys.path"
+            PythonHandler django.core.handlers.modpython
+            SetEnv DJANGO_SETTINGS_MODULE notabs.settings
+            SetEnv SERVER_IDENTIFIER www
+            PythonDebug Off
+            PythonAutoReload Off
+        </Location>
+
+  4) emacs /shark/apps/pbs/apache1/conf/www/proxy.conf
+    a) Insert the following configuration:
+
+        RewriteCond %{REQUEST_URI} ^/notabs
+        RewriteCond %{REQUEST_URI} !^/teacherline/media [NC]
+        RewriteRule ^/notabs(/.*)?$ proxy:balancer://appserver-apache2/notabs$1 [E=PBS_PROXY_BACKEND:appserver-apache2]
+
+  5) emacs /shark/apps/pbs/apache1/conf/www/document.conf
+    a) Insert the following configuration:
+
+        Alias /notabs/media /shark/apps/pbs/webapps/notabs/media/
+        <Directory /shark/apps/pbs/webapps/notabs/media>
+            AllowOverride FileInfo Indexes AuthConfig Limit Options
+            Options -Indexes +FollowSymLinks +Includes
+            Order allow,deny
+            Allow from all
+        </Directory>

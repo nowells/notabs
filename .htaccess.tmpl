@@ -1,0 +1,12 @@
+# See INSTALL file for complete directions on how to use this configuration file for your personal development environment.
+# Replace all instances of XX with your username.
+# If you are working on a branch, instead of trunk, replace all instances of main with your branchname
+Options +Indexes +Includes
+SetHandler mod_python
+PythonHandler django.core.handlers.modpython
+#PythonFixupHandler pbs.apache.handlers::fixup_handler_cookie_auth
+PythonPath "['/shark/apps/pbs/django/1.0', '/home/XX/public_html/strite/src'] + sys.path"
+SetEnv DJANGO_SETTINGS_MODULE strite.settings
+SetEnv SERVER_IDENTIFIER XX
+PythonDebug On
+PythonInterpreter XX_strite_main

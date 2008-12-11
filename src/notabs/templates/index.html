@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block body_content %}
+<h2>It worked!</h2>
+<p>
+    For more information on how to use Django check out <a href="http://dipsy.pbs.org/wiki/cat101/index.php/Django">PBS Django Best Practices</a>. You are currently logged in as {% if request.user.is_authenticated %}{{ user.username }}{% else %}an Anonymous user{% endif %}.
+</p>
+{% endblock %}

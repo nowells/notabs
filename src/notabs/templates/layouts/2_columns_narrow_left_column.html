@@ -1,0 +1,34 @@
+{% extends "layouts/base.html" %}
+
+{% block yahooui %}id="doc3" class="yui-t1"{% endblock yahooui %}
+
+{% block layout.header_content %}
+    {% block header_content %}{% endblock %}
+{% endblock %}
+
+{% block layout.body_content %}
+<div id="yui-main">
+    <div class="yui-b">
+        <div class="yui-u first">
+            {% if notifications %}
+                <ul id="notifications">
+                {% for notification in notifications %}
+                    <li class="{{ notification.type }}">{{ notification.content }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+
+            {% block body_content %}
+            {% endblock %}
+        </div><!-- .yui-u first -->
+    </div><!-- .yui-b -->
+</div><!-- #yui-main -->
+
+<div class="yui-b">
+    {% block left_sidebar_content %}{% endblock %}
+</div><!-- .yui-b -->
+{% endblock %}
+
+{% block layout.footer_content %}
+    {% block footer_content %}{% endblock %}
+{% endblock %}
