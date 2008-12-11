@@ -1,0 +1,117 @@
+/* notabs.com styles */
+
+/* Daytona Palette:
+  dark_blue: #336699
+  bright_blue: #73a9df
+  slate_blue: #9fbfdf
+  pale_blue: #d3e3ec
+  white: #fbf2df
+*/
+
+/* general setup layout styles */
+html {
+    background: url(images/tall_blue_white_grad.png) top #fbf2df repeat-x;
+    font-size: 110%;
+    color: #666;
+}
+#doc3 {
+    margin:auto;
+}
+#bd, #hd, #ft {
+    font-size: 110%;
+}
+#bd, #hd {
+    padding: 0 0.4em;
+}
+
+/* global link styles */
+a:link, a:visited {
+    color: #336699;
+    text-decoration: none;
+}
+a:hover, a:active {
+    color: #73a9df;
+    text-decoration: underline;
+}
+
+/* global display styles */
+.smallprint {
+    font-size: 85%;
+}
+.blockquote {
+    padding: 1em;
+    margin: 1em;
+    background: #d3e3ec;
+    font-family: monospace;
+}
+/* header styles */
+#hd div.login {
+    float:right;
+    margin: 1em;
+    padding: 0.2em 1em;
+    background: #fbf2df url(images/tall_dkblue_white_grad.png) repeat-x 0px -250px;
+}
+#hd div.login:hover {
+    background: #fbf2df url(images/tall_dkblue_white_grad.png) repeat-x 0px -100px;
+}
+#hd div.login a:hover {
+    text-decoration: none;
+    color: #fbf2df;
+}
+#hd h1 {
+    font-size: 300%;
+    margin: 0;
+}
+#hd h1 a .no {
+    color: #336699;
+}
+#hd h1 a .tabs {
+    color: #73a9df;
+}
+#hd h1 a {
+    text-decoration: none;
+}
+#hd h1 a:hover {
+    color: #9fbfdf;
+}
+#hd ul.hd_menu {
+    list-style-type: none;
+    margin: 0;
+    font-size: 120%;
+}
+#hd ul.hd_menu li {
+    list-style-type: none;
+    display:inline;
+    padding: 0.4em;
+}
+
+/* Sidebar styles */
+#left_sidebar {
+    font-size: 90%;
+}
+.sidebar_container {
+    margin: 0.4em;
+    padding: 0.8em;
+    border: solid 1px #fbf2df;
+}
+.sidebar_container h2 {
+    margin: 0;
+}
+
+/* Footer styles */
+#ft {
+    background: url(images/tall_blue_white_grad.png) top repeat-x;
+    border-top: solid 1px #fbf2df;
+    margin:0;
+    padding: 0.2em 0.2em 1em 0.2em;
+}
+#ft ul.ft_menu {
+    list-style-type: none;
+    margin: 0;
+    font-size: 90%;
+}
+#ft ul.ft_menu li {
+    list-style-type: none;
+    display:inline;
+    padding: 0.4em 0.4em 1em 0.4em;
+}

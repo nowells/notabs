@@ -1,6 +1,6 @@
 {% extends "layouts/base.html" %}
 
-{% block yahooui %}id="doc3" class="yui-t1"{% endblock yahooui %}
+{% block yahooui %}id="doc3" class="yui-t3"{% endblock yahooui %}
 
 {% block layout.header_content %}
     {% block header_content %}{% endblock %}
@@ -24,7 +24,7 @@
     </div><!-- .yui-b -->
 </div><!-- #yui-main -->
 
-<div class="yui-b">
+<div id="left_sidebar" class="yui-b">
     {% block left_sidebar_content %}{% endblock %}
 </div><!-- .yui-b -->
 {% endblock %}
