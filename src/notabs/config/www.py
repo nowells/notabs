@@ -18,11 +18,11 @@ SESSION_COOKIE_NAME = 'notabs_sessionid'
 CACHE_MIDDLEWARE_KEY_PREFIX = 'notabs_cache'
 
 # SERVER_URL and MEDIA_SERVER_URL have no trailing slash.
-SERVER_URL = 'http://www.pbs.org'
-MEDIA_SERVER_URL = 'http://www-tc.pbs.org'
+SERVER_URL = 'http://www.notabs.com'
+MEDIA_SERVER_URL = 'http://www.notabs.com'
 # SITE_URL and MEDIA_URL have trailing slashes
-SITE_URL = '%s/notabs/' % SERVER_URL
-MEDIA_URL = '%s/notabs/media/' % MEDIA_SERVER_URL
+SITE_URL = '%s/' % SERVER_URL
+MEDIA_URL = '%s/media/' % MEDIA_SERVER_URL
 
 EMAIL_HOST = 'smtp.pbs.org'
 EMAIL_PORT = 25
