@@ -5,7 +5,7 @@
 {% block body_content %}
     {% get_latest_posts 10 as latest_post_list %}
     {% for post in latest_post_list %}
-        <h2><a href="{{ post.get_absolute_url" }}">{{ post.title }}</a></h2>
+        <h2><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
 	<div class="post_meta smallprint">Posted by {{ post.author.first_name }} {{ post.author.last_name }} on {{ post.publish }}</div>
 	<p>{{ post.body|restructuredtext }}</p>
     {% endfor %}
