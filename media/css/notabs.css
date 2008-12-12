@@ -38,7 +38,7 @@ a:hover, a:active {
 .smallprint {
     font-size: 85%;
 }
-.blockquote {
+blockquote {
     padding: 1em;
     margin: 1em;
     background: #d3e3ec;
