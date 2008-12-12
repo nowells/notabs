@@ -14,6 +14,7 @@ DATABASE_PORT = ''
 DATABASE_OPTIONS = {}
 
 SESSION_COOKIE_NAME = 'notabs_sessionid'
+SESSION_COOKIE_DOMAIN = 'www.notabs.com'
 CACHE_MIDDLEWARE_KEY_PREFIX = 'notabs_cache'
 
 # SERVER_URL and MEDIA_SERVER_URL have no trailing slash.

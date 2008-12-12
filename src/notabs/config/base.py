@@ -133,7 +133,6 @@ INSTALLED_APPS = (
     'threadedcomments',
     'basic.blog',
     'basic.inlines',
-    'basic.books',
     'basic.people',
 )
 
