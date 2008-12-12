@@ -1,18 +1,17 @@
+import os
+
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 # Database Configuration
-DATABASE_ENGINE = 'mysql'
-DATABASE_NAME = ''
+db_path = os.path.abspath(os.path.join(os.path.realpath(os.path.dirname(__file__)), '..', '..', '..', 'db'))
+DATABASE_ENGINE = 'sqlite3'
+DATABASE_NAME = '%s/database.db' % db_path
 DATABASE_USER = ''
 DATABASE_PASSWORD = ''
 DATABASE_HOST = ''
 DATABASE_PORT = ''
-DATABASE_OPTIONS = {
-    'sql_mode': 'TRADITIONAL,STRICT_ALL_TABLES,ANSI',
-    'charset': 'utf8',
-    'init_command': 'SET storage_engine=INNODB',
-}
+DATABASE_OPTIONS = {}
 
 SESSION_COOKIE_NAME = 'notabs_sessionid'
 CACHE_MIDDLEWARE_KEY_PREFIX = 'notabs_cache'
@@ -24,7 +23,7 @@ MEDIA_SERVER_URL = 'http://www.notabs.com'
 SITE_URL = '%s/' % SERVER_URL
 MEDIA_URL = '%s/media/' % MEDIA_SERVER_URL
 
-EMAIL_HOST = 'smtp.pbs.org'
+EMAIL_HOST = ''
 EMAIL_PORT = 25
 EMAIL_HOST_USER = ''
 EMAIL_HOST_PASSWORD = ''

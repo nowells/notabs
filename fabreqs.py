@@ -41,5 +41,13 @@ requirements = [
         'package': 'threadedcomments',
         'dist': 'svn',
         'url': 'http://django-threadedcomments.googlecode.com/svn/trunk/',
-    }
+    }, {
+        'name': 'docutils',
+        'dist': 'pypi',
+        'url': 'http://pypi.python.org/pypi/docutils',
+    }, {
+        'name': 'pygments',
+        'dist': 'pypi',
+        'url': 'http://pypi.python.org/pypi/Pygments',
+    },
 ]

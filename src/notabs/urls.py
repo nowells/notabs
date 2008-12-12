@@ -1,12 +1,25 @@
-from django.conf.urls.defaults import patterns, url, include
+from django.conf.urls.defaults import patterns, url, include, handler500, handler404
 from django.contrib import admin
 from django.conf import settings
+from basic.blog.feeds import BlogPostsFeed
+
+feeds = {
+    'blog': BlogPostsFeed,
+}
+
+admin.autodiscover()
 
 urlpatterns = patterns('notabs.apps.generic.views',
     url(r'^$', 'index', name='index'),
     url(r'^login/$', 'login', name='login'),
     url(r'^logout/$', 'logout', name='logout'),
     url(r'^register/$', 'register', name='register'),
+    url(r'^blog/', include('basic.blog.urls')),
+    url(r'^comments/', include('django.contrib.comments.urls')),
+)
+
+urlpatterns += patterns('',
+    url(r'^feeds/(?P<url>.*)/$', 'django.contrib.syndication.views.feed', {'feed_dict': feeds}),
 )
 
 urlpatterns += patterns('',

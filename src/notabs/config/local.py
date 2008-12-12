@@ -3,7 +3,7 @@ TEMPLATE_DEBUG = DEBUG
 
 # Database Configuration
 import os
-db_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..', 'db'))
+db_path = os.path.abspath(os.path.join(os.path.realpath(os.path.dirname(__file__)), '..', '..', '..', 'db'))
 DATABASE_ENGINE = 'sqlite3'
 DATABASE_NAME = '%s/database.db' % db_path
 DATABASE_USER = ''
